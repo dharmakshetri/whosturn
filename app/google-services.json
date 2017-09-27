@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "31642511689",
+    "firebase_url": "https://whosturn-a711d.firebaseio.com",
+    "project_id": "whosturn-a711d",
+    "storage_bucket": "whosturn-a711d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:31642511689:android:ab7ad9bce6b2c594",
+        "android_client_info": {
+          "package_name": "co.prandroid.whosturn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "31642511689-2klqdnr1rerscqo54au19j0ttu2pjcmj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.prandroid.whosturn",
+            "certificate_hash": "6a2858f6e5a70737865593401adbd02bf92a74f9"
+          }
+        },
+        {
+          "client_id": "31642511689-ltm9e611lbvtka6v0off397d8pn6f9b6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAnGKumTUd4qTlW-8zl7rr4mJjeD9XYEE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "31642511689-ltm9e611lbvtka6v0off397d8pn6f9b6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

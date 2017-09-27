@@ -7,6 +7,7 @@ import android.support.design.widget.NavigationView
 import android.support.design.widget.Snackbar
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
@@ -129,12 +130,35 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             }
             R.id.nav_logout ->{
-                mAuth!!.signOut()
-                singOutSucessfully()
+                logOut()
             }
         }
 
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    fun logOut(){
+        val alert = AlertDialog.Builder(this)
+
+        // Builder
+        with (alert) {
+            setTitle("Are you sure want to logout?")
+            setPositiveButton("OK") {
+                dialog, whichButton ->
+                dialog.dismiss()
+                mAuth!!.signOut()
+                singOutSucessfully()
+            }
+
+            setNegativeButton("NO") {
+                dialog, whichButton ->
+                dialog.dismiss()
+            }
+        }
+
+        // Dialog
+        val dialog = alert.create()
+        dialog.show()
     }
 }

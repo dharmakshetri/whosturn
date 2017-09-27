@@ -36,8 +36,7 @@ class LoginActivity : BaseActivity(),  View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_activity)
         //Views
-        tvStatus = findViewById<TextView>(R.id.status)
-        tvDetails = findViewById<TextView>(R.id.detail)
+
         etEmail = findViewById<EditText>(R.id.et_email)
         etPassword = findViewById<EditText>(R.id.et_password)
 
@@ -45,7 +44,7 @@ class LoginActivity : BaseActivity(),  View.OnClickListener {
         //Buttons
         findViewById<Button>(R.id.btnSignIn).setOnClickListener(this)
         findViewById<Button>(R.id.btnCreateAccount).setOnClickListener(this)
-        findViewById<Button>(R.id.btnSignOut).setOnClickListener(this)
+
 
         mAuth = FirebaseAuth.getInstance()
 
@@ -94,14 +93,14 @@ class LoginActivity : BaseActivity(),  View.OnClickListener {
 
             findViewById<LinearLayout>(R.id.email_password_buttons).visibility = View.GONE
             findViewById<LinearLayout>(R.id.email_password_fields).visibility = View.GONE
-            findViewById<Button>(R.id.btnSignOut).visibility = View.VISIBLE
+
         } else {
             tvStatus!!.text="Sign Out"
             tvDetails!!.text=(null)
 
             findViewById<LinearLayout>(R.id.email_password_buttons).visibility = View.VISIBLE
             findViewById<LinearLayout>(R.id.email_password_fields).visibility = View.VISIBLE
-            findViewById<Button>(R.id.btnSignOut).visibility = View.GONE
+
         }
     }
 
@@ -119,7 +118,6 @@ class LoginActivity : BaseActivity(),  View.OnClickListener {
                 .addOnCompleteListener(this) { task ->
                     if (!task.isSuccessful) {
                         Toast.makeText(this@LoginActivity, "User Login Failed", Toast.LENGTH_SHORT).show()
-                        tvStatus!!.setText("Authentication Failed, Create New Account or Enter correct Credentials")
                     }else{
                         signInSucessfully()
                     }
@@ -154,7 +152,7 @@ class LoginActivity : BaseActivity(),  View.OnClickListener {
             } else {
                 //Registration error
                 Log.e("TAG"," ss user: ")
-                Toast.makeText(this@LoginActivity, "Something error on username and password", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@LoginActivity, "Something error on username and password Or You are already registered.", Toast.LENGTH_SHORT).show()
             }
             hideProgressDialog()
         }

@@ -1,4 +1,4 @@
-package co.prandroid.whosturn
+package co.prandroid.whosturn.util
 
 /**
  * Created by dharmakshetri on 9/26/17.

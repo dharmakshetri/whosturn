@@ -1,4 +1,4 @@
-package co.prandroid.whosturn
+package co.prandroid.whosturn.activity
 
 import android.app.ProgressDialog
 import android.content.Intent
@@ -14,6 +14,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
+import co.prandroid.whosturn.R
 import co.prandroid.whosturn.util.Utils
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
@@ -86,7 +87,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     fun singOutSucessfully() {
           //  val firebaseUser = this.mAuth!!.currentUser!!
             Toast.makeText(this@MainActivity, "Logout Sucessuflly", Toast.LENGTH_SHORT).show()
-            var intent= Intent(this,LoginActivity::class.java)
+            var intent= Intent(this, LoginActivity::class.java)
             startActivity(intent)
     }
 

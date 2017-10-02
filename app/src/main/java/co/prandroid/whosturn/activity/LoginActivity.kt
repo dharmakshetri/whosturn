@@ -1,4 +1,4 @@
-package co.prandroid.whosturn
+package co.prandroid.whosturn.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,8 @@ import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import android.widget.*
+import co.prandroid.whosturn.BaseActivity
+import co.prandroid.whosturn.R
 import co.prandroid.whosturn.util.Utils
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
@@ -124,7 +126,7 @@ class LoginActivity : BaseActivity(),  View.OnClickListener {
     fun signInSucessfully() {
         val firebaseUser = this.mAuth!!.currentUser!!
         Toast.makeText(this@LoginActivity, "Sign In Sucessuflly", Toast.LENGTH_SHORT).show()
-        var intent=Intent(this,MainActivity::class.java)
+        var intent=Intent(this, MainActivity::class.java)
         intent.putExtra(Utils.USER_TOKEN,firebaseUser.uid)
         intent.putExtra(Utils.USER_EMAIL,firebaseUser.email)
         startActivity(intent)
